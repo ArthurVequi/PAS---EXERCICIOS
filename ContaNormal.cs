@@ -5,7 +5,11 @@ public class ContaNormal : ContaBancaria {
     }
 
     public override void Saque(decimal valor) {
-        if (valor > 0 && Saldo >= valor) {
+        if (valor <= 0) {
+            Console.WriteLine("Valor inválido para saque.");
+            return;
+        }
+        if (Saldo >= valor) {
             base.Saque(valor);
         } 
         else {

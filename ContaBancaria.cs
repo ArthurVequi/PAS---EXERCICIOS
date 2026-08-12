@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class ContaBancaria {
     public int NumConta { get; protected set; }
@@ -24,9 +24,6 @@ public class ContaBancaria {
         if (valor > 0) {
             Saldo -= valor;
             ExtratoBancario.Adicionar($"Saque: R$ {valor}");
-        } 
-        else {
-            Console.WriteLine("Saldo insuficiente para saque");
         }
     }
 }

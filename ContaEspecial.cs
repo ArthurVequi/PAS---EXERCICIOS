@@ -7,7 +7,11 @@ public class ContaEspecial : ContaBancaria {
         Limite = limite;
     }
     public override void Saque(decimal valor) {
-        if (valor > 0 && (Saldo + Limite) >= valor) {
+        if (valor <= 0) {
+            Console.WriteLine("Valor inválido para saque.");
+            return;
+        }
+        if ((Saldo + Limite) >= valor) {
             base.Saque(valor);
         }
         else {
